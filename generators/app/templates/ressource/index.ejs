@@ -5,6 +5,6 @@ import <%= ressourceName+view %>Show from './<%= ressourceName+view %>'; <% } %>
 
 export default {
     <% for(let i = 0; i < props.views.length; i++) { const view = props.views[i]; %>
-    <%= view %>: <%= ressourceName+view %>,  <% } %>   
+    <%= view.toLowerCase() %>: <%= ressourceName+view %>,  <% } %>   
     icon: ContactsIcon
 };
