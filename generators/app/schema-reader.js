@@ -6,7 +6,6 @@ var SchemaReader = function(modelPath) {
   App.prototype.get = function(arg) {
     return mongoose;
   };
-  console.log('modelPath', modelPath);
   this.paths = [];
   this.modelPath = modelPath;
   let createModel = require(this.modelPath);

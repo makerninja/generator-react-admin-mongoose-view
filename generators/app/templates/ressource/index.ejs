@@ -1,14 +1,13 @@
 import ContactsIcon from '@material-ui/icons/Contacts';
-<%if (props.generateListView) { %> import <%= ressourceName %>List from './<%= ressourceName %>List'; <% } %>
-<%/*if (props.generateListShow) { %> import <%= ressourceName %>Show from './<%= ressourceName %>Show';  <% }*/ %>
-<%/*if (props.generateListCreate) { %> import <%= ressourceName %>Create from './<%= ressourceName %>Create';  <% }*/ %>
-<%if (props.generateListView) { %> import <%= ressourceName %>Edit from './<%= ressourceName %>Edit';  <% } %>
+<% for(let i = 0; i < props.views.length; i++) { const view = props.views[i]; %>
+import <%= ressourceName+view %>Show from './<%= ressourceName+view %>';
+<% } %>
 
 
 export default {
-    <%if (props.generateListView) { %> list: <%= ressourceName %>List,  <% } %>
-    <% /*if (props.generateListShow) { %> show: <%= ressourceName %>Show,  <% } */%>
-    <%/*if (props.generateListCreate) { %> create: <%= ressourceName %>Create,  <% } */%>
-    <%if (props.generateListView) { %> edit: <%= ressourceName %>Edit,  <% } %>
+    <% for(let i = 0; i < props.views.length; i++) { 
+        const view = props.views[i]; %>
+         <%= view %>: <%= ressourceName+view %>,
+    <% } %>
     icon: ContactsIcon
 };
