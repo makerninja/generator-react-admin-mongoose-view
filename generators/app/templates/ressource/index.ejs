@@ -1,13 +1,10 @@
 import ContactsIcon from '@material-ui/icons/Contacts';
 <% for(let i = 0; i < props.views.length; i++) { const view = props.views[i]; %>
-import <%= ressourceName+view %>Show from './<%= ressourceName+view %>';
-<% } %>
+import <%= ressourceName+view %>Show from './<%= ressourceName+view %>'; <% } %>
 
 
 export default {
-    <% for(let i = 0; i < props.views.length; i++) { 
-        const view = props.views[i]; %>
-         <%= view %>: <%= ressourceName+view %>,
-    <% } %>
+    <% for(let i = 0; i < props.views.length; i++) { const view = props.views[i]; %>
+    <%= view %>: <%= ressourceName+view %>,  <% } %>   
     icon: ContactsIcon
 };
