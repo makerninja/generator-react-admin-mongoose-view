@@ -64,6 +64,7 @@ Create views from Mongoose Schema`
 
   writing() {
     const ressourceName = this.props.ressourceName;
+    const ressourceFolderName = ressourceName.toLowerCase();
     const context = {
       ressourceName: ressourceName,
       fields: this.schema.getPaths(),
@@ -73,7 +74,7 @@ Create views from Mongoose Schema`
     // Generate Index
     this.fs.copyTpl(
       this.templatePath('ressource/index.ejs'),
-      this.destinationPath('src/' + ressourceName + '/index.js'),
+      this.destinationPath('src/' + ressourceFolderName + '/index.js'),
       context
     );
 
@@ -82,7 +83,7 @@ Create views from Mongoose Schema`
       const view = this.props.views[i];
       this.fs.copyTpl(
         this.templatePath('ressource/ressourceList.ejs'),
-        this.destinationPath('src/' + ressourceName.toLowerCase() + '/' + ressourceName + view + '.js'),
+        this.destinationPath('src/' + ressourceFolderName + '/' + ressourceName + view + '.js'),
         context
       );
     }
