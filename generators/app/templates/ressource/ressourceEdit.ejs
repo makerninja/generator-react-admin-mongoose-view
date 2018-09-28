@@ -1,0 +1,37 @@
+/* eslint react/jsx-key: off */
+import React from 'react';
+import PropTypes from 'prop-types';
+import {
+    DisabledInput,
+    Edit,
+    FormTab,
+    SelectInput,
+    TabbedForm,
+    TextInput,
+    required,
+} from 'react-admin';
+
+const UserEdit = ({ permissions, ...props }) => (
+    <Edit {...props}>
+        <TabbedForm defaultValue={{ role: 'user' }}>
+            <FormTab label="<%= ressourceName %>.form.tabOne" path="">
+                <% for(var i=0; i < fields.length; i++) { 
+                    const field = fields[i] %>
+                    <TextInput source="<%= field %>" />
+                <% } %>
+            </FormTab>
+            <FormTab label="<%= ressourceName %>.form.tabTwo" path="">
+            </FormTab>
+        
+        </TabbedForm>
+    </Edit>
+);
+
+UserEdit.propTypes = {
+    id: PropTypes.any.isRequired,
+    location: PropTypes.object.isRequired,
+    match: PropTypes.object.isRequired,
+    permissions: PropTypes.string,
+};
+
+export default UserEdit;

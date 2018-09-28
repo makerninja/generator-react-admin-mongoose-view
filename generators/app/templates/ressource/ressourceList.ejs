@@ -1,0 +1,45 @@
+/* eslint react/jsx-key: off */
+import PeopleIcon from '@material-ui/icons/People';
+import SearchIcon from '@material-ui/icons/Search';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import React from 'react';
+import {
+    Datagrid,
+    EditButton,
+    List,
+    Responsive,
+    ShowButton,
+    SimpleList,
+    TextField
+} from 'react-admin';
+export const UserIcon = PeopleIcon;
+
+
+
+const UserList = ({ permissions, ...props }) => (
+    <List
+        {...props}
+        sort={{ field: 'name', order: 'ASC' }}
+    >
+    <h1><%= ressourceName %></h1>
+        <Responsive
+            small={
+                <SimpleList
+                    primaryText={record => record.name}                    
+                />
+            }
+            medium={
+                <Datagrid hover={false}>
+                    <% for(var i=0; i < fields.length; i++) { 
+                        const field = fields[i] %>
+                        <TextField source="<%= field %>" />
+                    <% } %>
+                    <EditButton />
+                    <ShowButton />
+                </Datagrid>
+            }
+        />
+    </List>
+);
+
+export default UserList;
