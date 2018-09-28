@@ -82,7 +82,7 @@ Create views from Mongoose Schema`
       const view = this.props.views[i];
       this.fs.copyTpl(
         this.templatePath('ressource/ressourceList.ejs'),
-        this.destinationPath('src/' + ressourceName + '/' + ressourceName + view + '.js'),
+        this.destinationPath('src/' + ressourceName.toLowerCase() + '/' + ressourceName + view + '.js'),
         context
       );
     }

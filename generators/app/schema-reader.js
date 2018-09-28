@@ -1,6 +1,10 @@
 const mongoose = require('mongoose');
 require('mongoose-type-email');
 
+var capitalize = function(str){
+  return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
 var SchemaReader = function(modelPath) {
   var App = function() {};
   App.prototype.get = function(arg) {
@@ -13,7 +17,7 @@ var SchemaReader = function(modelPath) {
 };
 
 SchemaReader.prototype.getRessourceName = function() {
-  return this.model.modelName;
+  return capitalize(this.model.modelName);
 };
 
 SchemaReader.prototype.getPaths = function() {
