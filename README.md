@@ -1,5 +1,5 @@
 # generator-react-admin-mongoose-view [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
-> Generate React Admin view from Mongoose schema
+> Generate [React Admin](https://github.com/marmelab/react-admin) views components from Mongoose schema (FeathersJS)
 
 ## Installation
 
@@ -10,7 +10,7 @@ npm install -g yo
 npm install -g generator-react-admin-mongoose-view
 ```
 
-Then generate your new project:
+Then generate view:
 
 ```bash
 yo react-admin-mongoose-view
