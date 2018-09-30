@@ -68,7 +68,8 @@ Create views from Mongoose Schema`
     const context = {
       ressourceName: ressourceName,
       fields: this.schema.getPaths(),
-      props: this.props
+      props: this.props,
+      view: ''
     };
 
     // Generate Index
@@ -81,9 +82,12 @@ Create views from Mongoose Schema`
     // Generate selected views
     for (let i = 0; i < this.props.views.length; i++) {
       const view = this.props.views[i];
+      context.view = view;
       this.fs.copyTpl(
         this.templatePath('ressource/ressourceList.ejs'),
-        this.destinationPath('src/' + ressourceFolderName + '/' + ressourceName + view + '.js'),
+        this.destinationPath(
+          'src/' + ressourceFolderName + '/' + ressourceName + view + '.js'
+        ),
         context
       );
     }

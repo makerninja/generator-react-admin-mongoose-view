@@ -1,9 +1,9 @@
 const mongoose = require('mongoose');
 require('mongoose-type-email');
 
-var capitalize = function(str){
+var capitalize = function(str) {
   return str.charAt(0).toUpperCase() + str.slice(1);
-}
+};
 
 var SchemaReader = function(modelPath) {
   var App = function() {};

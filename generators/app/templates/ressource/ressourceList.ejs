@@ -16,7 +16,7 @@ export const UserIcon = PeopleIcon;
 
 
 
-const UserList = ({ permissions, ...props }) => (
+const <%= ressourceName %>List = ({ permissions, ...props }) => (
     <List
         {...props}
         sort={{ field: 'name', order: 'ASC' }}
@@ -41,4 +41,4 @@ const UserList = ({ permissions, ...props }) => (
     </List>
 );
 
-export default UserList;
+export default <%= ressourceName %>List;

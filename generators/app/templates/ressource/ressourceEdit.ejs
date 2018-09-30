@@ -11,7 +11,7 @@ import {
     required,
 } from 'react-admin';
 
-const UserEdit = ({ permissions, ...props }) => (
+const <%= ressourceName %>Edit = ({ permissions, ...props }) => (
     <Edit {...props}>
         <TabbedForm defaultValue={{ role: 'user' }}>
             <FormTab label="<%= ressourceName %>.form.tabOne" path="">
@@ -27,11 +27,11 @@ const UserEdit = ({ permissions, ...props }) => (
     </Edit>
 );
 
-UserEdit.propTypes = {
+<%= ressourceName %>Edit.propTypes = {
     id: PropTypes.any.isRequired,
     location: PropTypes.object.isRequired,
     match: PropTypes.object.isRequired,
     permissions: PropTypes.string,
 };
 
-export default UserEdit;
+export default <%= ressourceName %>Edit;

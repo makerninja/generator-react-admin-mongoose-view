@@ -1,0 +1,14 @@
+/* eslint react/jsx-key: off */
+import React from 'react';
+import { Show, TextField } from 'react-admin'; // eslint-disable-line import/no-unresolved
+
+const <%= ressourceName %>Show = ({ permissions, ...props }) => (
+    <Show {...props}>
+        <% for(var i=0; i < fields.length; i++) { 
+            const field = fields[i] %>
+        <TextField source="<%= field %>" />
+        <% } %>
+    </Show>
+);
+
+export default <%= ressourceName %>Show;
